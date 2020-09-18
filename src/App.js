@@ -27,11 +27,13 @@ const testData = [
 class App extends Component {
 
   state = {
-    profiles: testData
+    profiles: []
   }
 
    addNewProfile = (profileData) => {
-
+     this.setState(prevState => ({
+  profiles: [...prevState.profiles, profileData]
+}))
   }
   
   render() {
